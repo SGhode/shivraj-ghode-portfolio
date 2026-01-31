@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles - minimal overrides, most styling via Tailwind */
+@layer base {
+  body {
+    @apply antialiased text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-300;
+  }
+}
+
+/* Reusable component classes */
+@layer components {
+  .section-padding {
+    @apply px-6 py-16 md:px-12 lg:px-24;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2;
+  }
+  .section-subtitle {
+    @apply text-gray-600 dark:text-gray-400 max-w-2xl;
+  }
+}
