@@ -1,29 +1,57 @@
 import { useState } from 'react';
 import Button from './Button';
 
+// Formspree: get your form ID at https://formspree.io (free). Every submission emails you.
+const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
+
 /**
- * Contact section with form: name, email, message.
- * Submits via mailto or can be wired to a backend later.
+ * Contact section: form submits to Formspree, which emails you at ghodeshivraj2@gmail.com.
+ * Replace FORMSPREE_FORM_ID above with your Formspree form ID.
  */
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Option 1: mailto (opens email client)
-    const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
-    const body = encodeURIComponent(
-      `${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`
-    );
-    // Replace with your email for mailto, or wire to a backend/Formspree
-    window.location.href = `mailto:ghodeshivraj2@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+
+    // If Formspree ID not set, fall back to mailto (opens visitor's email app)
+    if (!FORMSPREE_FORM_ID || FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_FORM_ID') {
+      const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`
+      );
+      window.location.href = `mailto:ghodeshivraj2@gmail.com?subject=${subject}&body=${body}`;
+      setStatus('success');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -89,8 +117,23 @@ export default function Contact() {
               placeholder="Your message..."
             />
           </div>
-          <Button type="submit" variant="primary" className="w-full sm:w-auto">
-            {submitted ? 'Opening mail client…' : 'Send message'}
+          {status === 'success' && (
+            <p className="text-green-600 dark:text-green-400 font-medium">
+              Thanks! I&apos;ll get back to you soon.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-red-600 dark:text-red-400 font-medium">
+              Something went wrong. Please email me at ghodeshivraj2@gmail.com
+            </p>
+          )}
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-full sm:w-auto"
+            disabled={status === 'sending'}
+          >
+            {status === 'sending' ? 'Sending…' : 'Send message'}
           </Button>
         </form>
       </div>
