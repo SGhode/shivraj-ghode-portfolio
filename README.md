@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open [(https://portfolio-drab-five-80.vercel.app/)](https://portfolio-drab-five-80.vercel.app/).
 
 ## Build
 
