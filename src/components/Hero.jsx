@@ -49,7 +49,7 @@ export default function Hero() {
             id="hero-heading"
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 animate-slide-up"
           >
-            Shivraj
+            Shivraj Ghode
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Full-Stack Web Developer
