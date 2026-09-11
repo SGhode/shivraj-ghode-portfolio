@@ -53,6 +53,16 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <a
+              href="/Resume.pdf"
+              download="Resume.pdf"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors"
+            >
+              <span aria-hidden="true">↓</span>
+              Resume
+            </a>
+          </li>
+          <li>
             <button
               type="button"
               onClick={toggleTheme}

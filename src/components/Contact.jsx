@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Button from './Button';
 
 const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID;
+const WHATSAPP_MESSAGE = encodeURIComponent('Hi Shivraj, I saw your portfolio and wanted to connect');
+const WHATSAPP_URL = `https://wa.me/917028792266?text=${WHATSAPP_MESSAGE}`;
 
 /**
  * Contact section: form submits to Formspree and reports the submission state.
@@ -58,7 +60,7 @@ export default function Contact() {
       <p className="section-subtitle text-center mx-auto mb-10">
         Have a project in mind or want to say hi? Send me a message.
       </p>
-      <div className="max-w-xl mx-auto">
+      <div className="max-w-5xl mx-auto grid lg:grid-cols-[1fr_280px] gap-10 lg:gap-16 items-start">
         <form
           onSubmit={handleSubmit}
           className="space-y-6"
@@ -128,6 +130,30 @@ export default function Contact() {
             {status === 'sending' ? 'Sending…' : 'Send message'}
           </Button>
         </form>
+        <aside className="lg:pt-1" aria-label="Alternative contact options">
+          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/70 border border-gray-200 dark:border-gray-700">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Prefer a quick chat?</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">
+              Connect directly through WhatsApp or email.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+            >
+              <span className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold" aria-hidden="true">W</span>
+              Chat on WhatsApp
+            </a>
+            <a
+              href="mailto:ghodeshivraj2@gmail.com"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
+            >
+              <span aria-hidden="true">@</span>
+              Email me directly
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
   );

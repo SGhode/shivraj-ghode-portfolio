@@ -4,7 +4,8 @@
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/SGhode', icon: 'github' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shivraj-ghode-15563a28b/', icon: 'linkedin' },
-  { label: 'Twitter', href: 'https://x.com/ShivrajGhode', icon: 'twitter' },
+  { label: 'X', href: 'https://x.com/ShivrajGhode', icon: 'twitter' },
+  { label: 'WhatsApp', href: 'https://wa.me/917028792266?text=Hi%20Shivraj%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect', icon: 'whatsapp' },
 ];
 
 const iconPaths = {
@@ -21,6 +22,9 @@ const iconPaths = {
   twitter: (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   ),
+  whatsapp: (
+    <path d="M20.52 3.48A11.86 11.86 0 0012.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.9 11.9 0 005.72 1.46h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.47-8.43zm-8.44 18.3h-.01a9.88 9.88 0 01-5.03-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.86 9.86 0 01-1.51-5.26C2.21 6.46 6.64 2.03 12.08 2.03c2.64 0 5.12 1.03 6.98 2.89a9.82 9.82 0 012.89 6.99c0 5.44-4.43 9.87-9.87 9.87zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" />
+  ),
 };
 
 export default function Footer() {
@@ -35,9 +39,18 @@ export default function Footer() {
         <p className="text-sm text-gray-400">
           © {currentYear} Shivraj Ghode. All rights reserved.
         </p>
-        <ul className="flex items-center gap-6">
-          {socialLinks.map(({ label, href, icon }) => (
-            <li key={href}>
+        <div className="flex flex-wrap items-center justify-center gap-5">
+          <a
+            href="/Resume.pdf"
+            download="Resume.pdf"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-600 text-gray-200 text-sm font-medium hover:border-indigo-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <span aria-hidden="true">↓</span>
+            Download Resume
+          </a>
+          <ul className="flex items-center gap-5">
+            {socialLinks.map(({ label, href, icon }) => (
+              <li key={href}>
               <a
                 href={href}
                 target="_blank"
@@ -55,8 +68,9 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-          ))}
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
     </footer>
   );

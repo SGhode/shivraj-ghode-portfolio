@@ -13,10 +13,7 @@ export default function About() {
           About Me
         </h2>
         <p className="section-subtitle mb-4">
-          Full-Stack Web Developer based in Pune, with a focus on building responsive, database-driven web applications and RESTful APIs using Django/Flask and SQL. I also work with data analysis and machine learning using Python, Scikit-Learn, and feature engineering.
-        </p>
-        <p className="section-subtitle">
-          I&apos;ve developed full-stack web applications integrated with REST APIs and SQL databases, integrated data analysis and ML models into web-based solutions, and performed EDA and visualization on real-world datasets. I maintain clean code standards and version control with Git and GitHub, and I&apos;m always open to collaboration and new opportunities.
+          Final-year Information Technology Engineering student with a strong foundation in full-stack development (Java, Spring Boot, React, MySQL) and hands-on experience across internships in Java Full-Stack Development and AI/ML. Skilled in building end-to-end applications using REST APIs, Spring Security, and modern frontend frameworks, with a growing focus on scalable, production-ready systems. Combines a full-stack development skill set with an AI/ML background to bring a versatile, problem-solving approach to software engineering. Currently seeking opportunities to apply and grow these skills in a full-stack development role.
         </p>
       </div>
     </section>

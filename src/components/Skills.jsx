@@ -29,6 +29,16 @@ const skillCategories = [
   },
 ];
 
+const techBadges = [
+  { name: 'Java', mark: 'Jv' },
+  { name: 'Spring Boot', mark: 'SB' },
+  { name: 'React', mark: 'R' },
+  { name: 'MySQL', mark: 'SQL' },
+  { name: 'Python', mark: 'Py' },
+  { name: 'Docker', mark: 'D' },
+  { name: 'Git', mark: 'Git' },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="section-padding" aria-labelledby="skills-heading">
@@ -38,6 +48,14 @@ export default function Skills() {
       <p className="section-subtitle text-center mx-auto mb-12">
         Technologies and tools I work with to build and ship projects.
       </p>
+      <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-12" aria-label="Tech stack">
+        {techBadges.map((tech) => (
+          <span key={tech.name} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-200">
+            <span className="w-7 h-7 rounded-md bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 flex items-center justify-center text-xs font-bold" aria-hidden="true">{tech.mark}</span>
+            {tech.name}
+          </span>
+        ))}
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {skillCategories.map((category) => (
           <div

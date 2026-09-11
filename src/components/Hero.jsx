@@ -41,6 +41,10 @@ export default function Hero() {
           <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 animate-fade-in">
             Hello, I&apos;m
           </p>
+          <span className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium border border-green-200 dark:border-green-800 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-green-500" aria-hidden="true" />
+            Open to Full-Stack Internships
+          </span>
           <h1
             id="hero-heading"
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 animate-slide-up"
