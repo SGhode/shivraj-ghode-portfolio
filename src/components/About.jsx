@@ -13,7 +13,7 @@ export default function About() {
           About Me
         </h2>
         <p className="section-subtitle mb-4">
-          Final-year Information Technology Engineering student with a strong foundation in full-stack development (Java, Spring Boot, React, MySQL) and hands-on experience across internships in Java Full-Stack Development and AI/ML. Skilled in building end-to-end applications using REST APIs, Spring Security, and modern frontend frameworks, with a growing focus on scalable, production-ready systems. Combines a full-stack development skill set with an AI/ML background to bring a versatile, problem-solving approach to software engineering. Currently seeking opportunities to apply and grow these skills in a full-stack development role.
+          Final-year Information Technology Engineering student with a strong foundation in full-stack development (Java, Spring Boot, React, MySQL) and hands-on experience across internships in Java Full-Stack Development and AI/ML. Skilled in building end-to-end applications using REST APIs, Spring Security, and modern frontend frameworks, including database-driven web applications and RESTful APIs with Flask/FastAPI and SQL. Currently seeking opportunities to apply and grow these skills in a full-stack development role.
         </p>
       </div>
     </section>

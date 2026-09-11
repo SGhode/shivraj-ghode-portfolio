@@ -55,7 +55,7 @@ export default function Hero() {
             Full-Stack Web Developer
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Building responsive, database-driven web applications and RESTful APIs with Django/Flask and SQL. Exploring data science, ML, and cloud platforms.
+            Engineering student with practical full-stack development experience in Java, Spring Boot, React, MySQL, and REST APIs. Builds end-to-end applications spanning backend services to frontend UIs. Seeking a full-stack internship opportunity.
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <Button variant="primary" onClick={scrollToContact}>
