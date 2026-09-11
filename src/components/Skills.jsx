@@ -1,21 +1,31 @@
 /**
- * Skills section: Frontend, Backend, and Tools in card layout.
+ * Skills section: grouped directly from the current resume.
  */
 const skillCategories = [
   {
-    title: 'Frontend & Web',
-    items: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Responsive Web Design', 'Flask', 'REST APIs'],
-    icon: '🖥️',
+    title: 'Languages',
+    items: ['Java', 'Python', 'JavaScript', 'SQL', 'HTML/CSS'],
+    icon: '01',
   },
   {
-    title: 'Backend & Data',
-    items: ['Python', 'Java', 'C/C++', 'SQL', 'PostgreSQL', 'MySQL', 'Pandas', 'NumPy', 'Scikit-Learn', 'Matplotlib', 'Seaborn', 'Feature Engineering', 'Predictive Modeling'],
-    icon: '⚙️',
+    title: 'Frameworks/Libraries',
+    items: ['Spring Boot', 'React', 'Node.js', 'Flask', 'Bootstrap'],
+    icon: '02',
   },
   {
-    title: 'Tools',
-    items: ['Git', 'GitHub', 'Jupyter Notebooks', 'VS Code', 'Database Design & Normalization'],
-    icon: '🛠️',
+    title: 'Databases',
+    items: ['MySQL', 'SQL'],
+    icon: '03',
+  },
+  {
+    title: 'Tools/Platforms',
+    items: ['Git/GitHub', 'Docker', 'Postman', 'VS Code', 'Linux'],
+    icon: '04',
+  },
+  {
+    title: 'Core Competencies',
+    items: ['Data Structures & Algorithms', 'REST API Design', 'Full-Stack Web Development', 'Software Development Life Cycle'],
+    icon: '05',
   },
 ];
 
@@ -28,7 +38,7 @@ export default function Skills() {
       <p className="section-subtitle text-center mx-auto mb-12">
         Technologies and tools I work with to build and ship projects.
       </p>
-      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {skillCategories.map((category) => (
           <div
             key={category.title}

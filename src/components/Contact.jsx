@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import Button from './Button';
 
-// Formspree: get your form ID at https://formspree.io (free). Every submission emails you.
-const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
+const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID;
 
 /**
- * Contact section: form submits to Formspree, which emails you at ghodeshivraj2@gmail.com.
- * Replace FORMSPREE_FORM_ID above with your Formspree form ID.
+ * Contact section: form submits to Formspree and reports the submission state.
  */
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -20,14 +18,8 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // If Formspree ID not set, fall back to mailto (opens visitor's email app)
-    if (!FORMSPREE_FORM_ID || FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_FORM_ID') {
-      const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
-      const body = encodeURIComponent(
-        `${formData.message}\n\n---\nFrom: ${formData.name}\nEmail: ${formData.email}`
-      );
-      window.location.href = `mailto:ghodeshivraj2@gmail.com?subject=${subject}&body=${body}`;
-      setStatus('success');
+    if (!FORMSPREE_FORM_ID) {
+      setStatus('error');
       return;
     }
 
@@ -64,7 +56,7 @@ export default function Contact() {
         Contact
       </h2>
       <p className="section-subtitle text-center mx-auto mb-10">
-        Have a project in mind or want to say hi? Drop me a message.
+        Have a project in mind or want to say hi? Send me a message.
       </p>
       <div className="max-w-xl mx-auto">
         <form
@@ -124,7 +116,7 @@ export default function Contact() {
           )}
           {status === 'error' && (
             <p className="text-red-600 dark:text-red-400 font-medium">
-              Something went wrong. Please email me at ghodeshivraj2@gmail.com
+              Unable to send your message right now. Please try again later or email me at ghodeshivraj2@gmail.com.
             </p>
           )}
           <Button

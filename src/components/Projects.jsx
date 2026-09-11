@@ -25,6 +25,7 @@ export default function Projects() {
             title={project.title}
             description={project.description}
             techStack={project.techStack}
+            liveDemoUrl={project.liveDemoUrl}
             githubUrl={project.githubUrl}
           />
         ))}
@@ -32,8 +33,8 @@ export default function Projects() {
       <div className="flex justify-center">
         <Button
           variant="secondary"
-          href="/Resume_Shivraj_Ghode.pdf"
-          download="Resume_Shivraj_Ghode.pdf"
+          href="/Resume.pdf"
+          download="Resume.pdf"
           className="inline-flex items-center gap-2"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
