@@ -1,6 +1,13 @@
 /** Project data from the current resume. */
 export const projects = [
   {
+    id: 3,
+    title: 'Job Portal',
+    description:
+      'Full-stack job application web app built with Spring Boot and Spring MVC, using a layered Controller-Service-Repository architecture. Handles job posting through forms with data binding between JSP views and Java model objects, backed by a MySQL database.',
+    techStack: ['Java', 'Spring Boot', 'Spring MVC', 'JSP', 'MySQL', 'Maven'],
+  },
+  {
     id: 1,
     title: 'ExamGuard AI',
     description:

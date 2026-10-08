@@ -3,7 +3,7 @@
  */
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/SGhode', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shivraj-ghode-15563a28b/', icon: 'linkedin' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shivraj-ghode/', icon: 'linkedin' },
   { label: 'X', href: 'https://x.com/ShivrajGhode', icon: 'twitter' },
   { label: 'WhatsApp', href: 'https://wa.me/917028792266?text=Hi%20Shivraj%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect', icon: 'whatsapp' },
 ];

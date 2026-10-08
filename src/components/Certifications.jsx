@@ -1,15 +1,27 @@
 const certifications = [
   {
-    title: 'Oracle Certified Professional: OCI 2025 Data Science Professional & Generative AI Professional',
+    title: 'Oracle Cloud Infrastructure 2025 Certified Data Science Professional',
     issuer: 'Oracle',
     mark: 'O',
     date: 'Aug 2025',
   },
   {
-    title: 'Foundation Course on IR4.0 Technologies',
-    issuer: 'TechSaksham (Microsoft & SAP)',
-    mark: 'MS',
-    date: 'Feb 2025',
+    title: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional',
+    issuer: 'Oracle',
+    mark: 'O',
+    date: 'Aug 2025',
+  },
+  {
+    title: 'Data Analytics Essentials',
+    issuer: 'Cisco Networking Academy',
+    mark: 'C',
+    date: 'Sep 2026',
+  },
+  {
+    title: 'Python Skill Up',
+    issuer: 'GeeksforGeeks',
+    mark: 'GfG',
+    date: '2026', // replace with the actual month, or remove the date line
   },
 ];
 
@@ -18,7 +30,7 @@ export default function Certifications() {
     <section id="certifications" className="section-padding" aria-labelledby="certifications-heading">
       <div className="max-w-5xl mx-auto">
         <h2 id="certifications-heading" className="section-title text-center mb-4">Certifications</h2>
-        <p className="section-subtitle text-center mx-auto mb-10">Credentials supporting my work across software and emerging technologies.</p>
+        <p className="section-subtitle text-center mx-auto mb-10">Credentials that back up my work in software development.</p>
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((certification) => (
             <article key={certification.title} className="p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
